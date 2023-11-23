@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# lib/generators/hyrax/sso/install_generator.rb
 module Hyrax
   module Sso
     module Generators
@@ -8,7 +7,7 @@ module Hyrax
         source_root File.expand_path('templates', __dir__)
 
         def copy_migrations
-          rake 'hyrax:sso:install:migrations'
+          rake 'hyrax:sso:install'
         end
       end
     end
