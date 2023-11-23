@@ -1,4 +1,4 @@
-require_relative 'lib/hyrax/sso/version'
+require_relative 'lib/hyrax/sso/ion'
 
 Gem::Specification.new do |spec|
   spec.name          = "hyrax-sso"
