@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 require "hyrax/sso/version"
+require "rails"
 require "workos"
 require "securerandom"
 require "ostruct"
@@ -38,8 +39,10 @@ module Hyrax
     end
     class Error < StandardError; end
 
-    if defined?(Rails)
-      require_relative '../tasks/hyrax/sso_tasks.rake'
+    class Railtie < Rails::Railtie
+      rake_tasks do
+        load "tasks/hyrax/sso_tasks.rake"
+      end
     end
 
     # The auth service is responsbible for generating the workos redirect url.
