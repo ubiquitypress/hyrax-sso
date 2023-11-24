@@ -37,6 +37,10 @@ module HyraxSso
   end
   class Error < StandardError; end
 
+  if defined?(Rails)
+    require_relative '../tasks/hyrax/sso_tasks.rake'
+  end
+
   # The auth service is responsbible for generating the workos redirect url.
   class AuthService
     def initialize(account:)
