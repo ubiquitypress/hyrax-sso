@@ -7,7 +7,7 @@ module Hyrax
     module Generators
       class InstallGenerator < Rails::Generators::Base
         include Rails::Generators::Migration
-        source_root File.expand_path('db/migrate', __dir__)
+        source_root File.expand_path('../../../../db/migrate', __dir__)
 
         # Implement a next migration number in line with the usual Rails convention
         def self.next_migration_number(path)
