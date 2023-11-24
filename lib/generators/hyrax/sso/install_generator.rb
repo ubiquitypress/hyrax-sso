@@ -11,7 +11,7 @@ module Hyrax
 
         # Implement a next migration number in line with the usual Rails convention
         def self.next_migration_number(path)
-          Time.now.utc.strftime("%Y%m%d%H%M%S")
+          Time.now.utc.strftime("%Y%m%d%H%M%S%L")
         end
 
         def copy_migrations
