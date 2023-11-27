@@ -15,13 +15,7 @@ module Hyrax
         end
 
         def copy_migrations
-          migration_template '20230301152739_add_sso_attributes_to_accounts.rb', 'db/migrate/add_sso_attributes_to_accounts.rb'
-          sleep 1 # pauses execution for 0.1 seconds
-          migration_template '20230317071542_add_workos_connection_id_to_accounts.rb', 'db/migrate/add_workos_connection_id_to_accounts.rb'
-          sleep 1 # pauses execution for 0.1 seconds
-          migration_template '20230320114316_clean_up_work_os_fields.rb', 'db/migrate/clean_up_work_os_fields.rb'
-          sleep 1 # pauses execution for 0.1 seconds
-          migration_template '20230411011527_add_work_os_managed_domain_to_accounts.rb', 'db/migrate/add_work_os_managed_domain_to_accounts.rb'
+          migration_template '20231127152739_add_fields_for_sso.rb', 'db/migrate/add_fields_for_sso.rb'
         end
       end
     end
