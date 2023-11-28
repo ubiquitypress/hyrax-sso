@@ -11,6 +11,10 @@ module Hyrax
         g.test_framework :rspec
       end
 
+      initializer 'hyrax.sso.prepend_view_path' do |app|
+        app.config.paths.add 'hyrax-sso/app/views', eager_load: true
+      end
+
       # To load views from the gem instead of the application
       config.autoload_paths += %W(#{config.root}/app)
     end
