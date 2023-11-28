@@ -2,7 +2,7 @@
 
 require "sidekiq/web"
 
-HykuAddons::Engine.routes.draw do
+Hyrax::Engine.routes.draw do
   get "/api/v1/tenant/:tenant_id/sso/login", to: "/hyrax/sso#uiauth"
   post "/api/v1/tenant/:tenant_id/sso/callback", to: "/hyrax/sso#uicallback"
 

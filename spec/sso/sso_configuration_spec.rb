@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe HykuAddons::Sso do
+RSpec.describe Hyrax::Sso do
   describe "Configuration" do
     let(:api_key) { ENV["WORKOS_API_KEY"] }
 
