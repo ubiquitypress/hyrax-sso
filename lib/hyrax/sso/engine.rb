@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require "rails"
 
 module Hyrax
   module Sso
@@ -9,6 +10,9 @@ module Hyrax
       config.generators do |g|
         g.test_framework :rspec
       end
+
+      # To load views from the gem instead of the application
+      config.autoload_paths += %W(#{config.root}/app)
     end
   end
 end

@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 require "hyrax/sso/version"
+require "hyrax/sso/engine"
 require "rails"
 require "workos"
 require "securerandom"
