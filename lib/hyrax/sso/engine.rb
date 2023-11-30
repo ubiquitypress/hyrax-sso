@@ -11,8 +11,8 @@ module Hyrax
         g.test_framework :rspec
       end
 
-      initializer 'hyrax.sso.prepend_view_path' do |app|
-        app.config.paths.add 'hyrax-sso/app/views', eager_load: true
+      initializer 'prepend view path', before: :load_config_initializers do |app|
+        app.config.paths['app/views'].unshift(Hyrax::Sso::Engine.root.join('app/views'))
       end
 
       # To load views from the gem instead of the application
