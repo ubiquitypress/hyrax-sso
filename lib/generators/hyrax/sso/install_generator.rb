@@ -18,9 +18,9 @@ module Hyrax
           migration_template '20231127152739_add_fields_for_sso.rb', 'db/migrate/add_fields_for_sso.rb'
         end
 
-        insert_into_file "config/routes.rb",
-                         "mount Hyrax::Sso::Engine => '/'",
-                         :after => "Rails.application.routes.draw do\n"
+        # insert_into_file "config/routes.rb",
+        #                 "mount Hyrax::Sso::Engine => '/'",
+        #                 :after => "Rails.application.routes.draw do\n"
       end
     end
   end
