@@ -16,7 +16,7 @@ module Hyrax
         ::ApplicationController.send :helper, Hyrax::Sso::Engine.helpers
       end
 
-      Rails.application.config.to_prepare do
+      config.to_prepare do
         Proprietor::AccountsController.send :include, Hyrax::Sso::Proprietor::AccountsControllerExtension
       end
     end
