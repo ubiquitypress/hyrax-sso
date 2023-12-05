@@ -15,6 +15,10 @@ module Hyrax
         ActionController::Base.view_paths = paths.uniq
         ::ApplicationController.send :helper, Hyrax::Sso::Engine.helpers
       end
+
+      Rails.application.config.to_prepare do
+        Proprietor::AccountsController.send :include, Hyrax::Sso::Proprietor::AccountsControllerExtension
+      end
     end
   end
 end
