@@ -6,6 +6,7 @@ module Hyrax
       class AccountsController < ::Proprietor::AccountsController
 
         def update
+          super
           respond_to do |format|
             if @account.update(account_params)
 
