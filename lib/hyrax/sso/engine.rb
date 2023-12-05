@@ -17,7 +17,7 @@ module Hyrax
       end
 
       config.to_prepare do
-        Proprietor::AccountsController.send :include, Hyrax::Sso::Proprietor::AccountsControllerExtension
+        ::Proprietor::AccountsController.send :include, Hyrax::Sso::Proprietor::AccountsControllerBehavior
       end
     end
   end
