@@ -1,4 +1,3 @@
-# hyrax-sso/app/controllers/concerns/hyrax/sso/proprietor/accounts_controller_behavior.rb
 
 module Hyrax
   module Sso
