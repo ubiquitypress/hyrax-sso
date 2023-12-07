@@ -1,5 +1,6 @@
 require "bundler/setup"
 require "hyrax/sso"
+require "hyrax/sso/engine"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
