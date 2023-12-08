@@ -1,7 +1,8 @@
 # frozen_string_literal: true
-require "hyrax/sso/version"
+
+require "rails/all"
 require "hyrax/sso/engine"
-require "rails"
+require "hyrax/sso/version"
 require "workos"
 require "securerandom"
 require "ostruct"
@@ -57,7 +58,7 @@ module Hyrax
         WorkOS::SSO.authorization_url(
           client_id: Sso.configuration.client_id,
           organization: @account.work_os_organisation,
-          domain: @account.work_os_managed_domain,
+          #domain: @account.work_os_managed_domain,
           redirect_uri: "https://#{@account.cname.gsub("dashboard.","")}/sso/callback"
         )
       end
@@ -67,7 +68,7 @@ module Hyrax
         WorkOS::SSO.authorization_url(
           client_id: Sso.configuration.client_id,
           organization: @account.work_os_organisation,
-          domain: @account.work_os_managed_domain,
+          #domain: @account.work_os_managed_domain,
           redirect_uri: "https://#{@account.cname}/sso/callback"
         )
       end

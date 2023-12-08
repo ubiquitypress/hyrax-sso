@@ -13,7 +13,7 @@ RSpec.describe "CallBackService" do
 
   it "handlers call back" do
     logged_on = false
-    service = Hyrax::Sso::CallBackService.new(params: { code: 1234 })
+    service = Hyrax::Sso::CallBackService.new(code: 1234 )
     service.handle { |_profile, _password| logged_on = true }
     expect(logged_on).to eq(true)
   end
