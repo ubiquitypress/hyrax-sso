@@ -33,6 +33,8 @@ module Hyrax
       # to the configure block. Then it's just a matter
       # of using the attribute accessors we previously defined
       def configure
+        puts "WORKOS_API_KEY: #{ENV['WORKOS_API_KEY']}"
+        puts "WORKOS_CLIENT_ID: #{ENV['WORKOS_CLIENT_ID']}"
         configuration.api_key = ENV["WORKOS_API_KEY"]
         configuration.client_id = ENV["WORKOS_CLIENT_ID"]
         initialize
