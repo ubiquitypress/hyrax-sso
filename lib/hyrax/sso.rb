@@ -71,7 +71,7 @@ module Hyrax
           client_id: Sso.configuration.client_id,
           organization: @account.work_os_organisation,
           domain: @account.work_os_managed_domain,
-          redirect_uri: "https://huge-rivers-mate.loca.lt/sso/callback"
+          redirect_uri: "https://#{@account.cname}/sso/callback"
         )
       end
     end
