@@ -23,7 +23,7 @@ module Hyrax
 
       service.handle do |profile, password|
 
-        user = User.find_or_create_by!(email: profile.email.downcase) do |u|
+        user = ::User.find_or_create_by!(email: profile.email.downcase) do |u|
           u.password = password
         end
         
@@ -44,7 +44,7 @@ module Hyrax
 
       service.handle do |profile, password|
 
-        user = User.find_or_create_by!(email: profile.email.downcase) do |u|
+        user = ::User.find_or_create_by!(email: profile.email.downcase) do |u|
           u.password = password
         end
 
@@ -63,11 +63,11 @@ module Hyrax
     end
 
     def current_account
-      @account ||= Account.find_by cname: request.env["SERVER_NAME"]
+      @account ||= ::Account.find_by cname: request.env["SERVER_NAME"]
     end
 
     def set_account
-      AccountElevator.switch!(current_account.cname) if current_account.present?
+      ::AccountElevator.switch!(current_account.cname) if current_account.present?
     end
 
   end
