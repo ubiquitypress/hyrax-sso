@@ -10,7 +10,7 @@ module Hyrax
     end
 
     def uiauth
-      account = Account.find_by tenant: params[:tenant_id]
+      account = ::Hyku::Account.find_by tenant: params[:tenant_id]
       redirect_to Hyrax::Sso::AuthService.new(account: account).generate_authorisation_url_for_frontend
     end
 
@@ -44,7 +44,7 @@ module Hyrax
 
       service.handle do |profile, password|
 
-        user = User.find_or_create_by!(email: profile.email.downcase) do |u|
+        user = ::Hyku::User.find_or_create_by!(email: profile.email.downcase) do |u|
           u.password = password
         end
 
@@ -63,7 +63,7 @@ module Hyrax
     end
 
     def current_account
-      @account ||= Account.find_by cname: request.env["SERVER_NAME"]
+      @account ||= ::Hyku::Account.find_by cname: request.env["SERVER_NAME"]
     end
 
     def set_account
