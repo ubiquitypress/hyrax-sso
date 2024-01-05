@@ -49,7 +49,7 @@ module Hyrax
         end
 
         puts "LOG_sso_profile" + profile.email.downcase
-        puts "LOG_sso_user" + user.present?
+        puts "LOG_sso_user" + user.email
 
         sign_in user
 
