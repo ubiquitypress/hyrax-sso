@@ -26,9 +26,6 @@ module Hyrax
         user = ::User.find_or_create_by!(email: profile.email.downcase) do |u|
           u.password = password
         end
-
-        puts "LOG_sso_profile" + profile
-        puts "LOG_sso_user" + user
         
         sign_in user
         set_jwt_cookies(user)
@@ -51,8 +48,8 @@ module Hyrax
           u.password = password
         end
 
-        puts "LOG_sso_profile" + profile
-        puts "LOG_sso_user" + user
+        puts "LOG_sso_profile" + profile.email.downcase
+        puts "LOG_sso_user" + user.present?
 
         sign_in user
 
