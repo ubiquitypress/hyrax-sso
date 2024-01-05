@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'byebug'
 
 module Hyrax
   class SsoController < ::Hyku::API::V1::SessionsController
