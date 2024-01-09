@@ -51,7 +51,6 @@ module Hyrax
         puts "LOG_sso_profile" + profile.email.downcase
         puts "LOG_sso_user" + user.email
 
-        byebug
         sign_in user
 
         set_jwt_cookies(user)
